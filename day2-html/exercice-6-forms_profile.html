@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!--This is just CSS to make the form look better, you will learn about CSS later-->
+    <style>
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="file"],
+        select,
+        button,
+        textarea {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .pad {
+            padding: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="name">Your name</label>
+        <input type="text" name="name" id="name" placeholder="your name" required>
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" placeholder="example@email.com" required>
+        <label for="country">Your Country</label>
+        <select name="country" id="country" required>
+            <option value="France">France</option>
+            <option value="Spain">Spain</option>
+            <option value="USA">USA</option>
+            <option value="Germany">Germany</option>
+        </select>
+        <div class="pad">
+            <span>Your Gender</span>
+            <input type="radio" name="gender" id="gender" value="male">
+            <label for="gender">Male</label>
+            <input type="radio" name="gender" id="gender" value="female">
+            <label for="gender">Female</label>
+        </div>
+        <label for="datebirth">Your Date of birth</label>
+        <input type="date" name="datebirth" id="datebirth" required>
+        <div class="pad">
+            <span>Your Prefered languages</span>
+            <input type="checkbox" name="lang1" id="lang1" value="French">
+            <label for="lang1">French</label>
+            <input type="checkbox" name="lang2" id="lang2" value="English">
+            <label for="lang2">English</label>
+            <input type="checkbox" name="lang3" id="lang3" value="German">
+            <label for="lang3">German</label>
+            <input type="checkbox" name="lang4" id="lang4" value="Chinese">
+            <label for="lang4">Chinese</label>
+        </div>
+        <label for="bio">Your short bio</label>
+        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Your bio" required></textarea>
+        <!--This is  how you can upload files in forms-->
+        <input type="file" name="cv" title="upload your CV" required>
+        
+        <input type="submit" value="Save profile">
+    </form>
+</body>
+
+</html>
