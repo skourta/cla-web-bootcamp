@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Grid Gallery</title>
+</head>
+
+<style>
+    .gallery-grid {
+        display: grid;
+        max-width: 100%;
+        grid-template-columns: repeat(4,1fr);
+        grid-auto-rows: min-content;
+        place-items: center;
+        gap: 1rem;
+        place-content: center;
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+</style>
+<body>
+    
+
+
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="" srcset="">
+        <img src="https://images.unsplash.com/photo-1628626664285-c4892adaacd6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80" alt="" srcset="">
+        <img src="https://images.unsplash.com/photo-1628701621033-50564c683bb0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="" srcset="">
+        <img src="https://images.unsplash.com/photo-1628697406008-1f3cbc466522?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" srcset="">
+        <img src="https://images.unsplash.com/photo-1628699271765-1a0c51f88417?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80" alt="" srcset="">
+        <img src="https://images.unsplash.com/photo-1628620224007-f4586fa0bc3b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80" alt="" srcset="">
+        <img src="https://images.unsplash.com/photo-1628630165559-efe6ae701526?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=643&q=80" alt="" srcset="">
+    </div>
+
+</body>
+</html>
