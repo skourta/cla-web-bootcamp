@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <style>
+        .container {
+            position: relative;
+            max-width: 768px;
+            margin: auto;
+            height: 700px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 1rem;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="z-index: 1; background : orange; top: 1rem ; left:1rem">
+        </div>
+        <div class="card" style="z-index: 2; background : green; top: 2rem ; left:2rem">
+
+        </div>
+        <div class="card" style="z-index: -1; background : black; top: 3rem ; left:-1rem">
+
+        </div>
+    </div>
+</body>
+</html>

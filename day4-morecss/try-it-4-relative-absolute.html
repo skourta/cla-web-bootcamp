@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute inside Relative Position</title>
+
+    <style>
+        *{
+            color: aliceblue;
+        }
+        .container {
+         
+            position: relative;
+            max-width: 768px;
+            margin: auto;
+            height: 700px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .position-absolute {
+            position: absolute;
+        }
+
+        .red-box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        .green-box {
+            width: 200px;
+            height: 150px;
+            background: green;
+        }
+        .yellow-box {
+            width: 200px;
+            height: 150px;
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="position-absolute green-box" style="top: 1rem; left: 1rem" >This is absolutely positioned</div>
+    <div class="container">
+        <span class="position-absolute red-box" style=" top: 30% ; right : 40% ">Absolutely positionned inside relative</span>
+        <span class="position-absolute green-box" style="top: 1rem; left: 1rem">Absolutely positionned inside relative</span>
+        <span class="position-absolute yellow-box" style="bottom: -2rem; left: -2rem">Absolutely positionned inside relative</span>
+    </div>
+</body>
+
+</html>

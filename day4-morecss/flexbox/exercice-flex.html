@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Flex</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        .cards-container {
+            max-width: 768px;
+            display: flex;
+            margin: auto;
+            justify-content: space-evenly;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 1rem;
+            background-color: beige;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .flex-item {
+            flex-basis: 29%;
+            max-width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <section style="border: 2px solid gray;">
+        <h1 style="text-align: center;">
+            Our Cards
+        </h1>
+        <div class="cards-container">
+            <div class="card flex-item">
+                <header class="title">
+                    <h2>First Card</h2>
+                </header>
+                <main>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum blanditiis tempora ut tenetur,
+                        veniam perferendis ex eius totam velit accusamus, perspiciatis animi. Placeat dignissimos enim,
+                        excepturi sequi quibusdam blanditiis cupiditate!
+                    </p>
+                </main>
+                <footer class="note">
+                    <span>note 1</span>
+                </footer>
+            </div>
+            <div class="card flex-item">
+                <header class="title">
+                    <h2>Second Card</h2>
+                </header>
+                <main>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum blanditiis tempora ut tenetur,
+                        veniam perferendis ex eius totam velit accusamus, perspiciatis animi. Placeat dignissimos enim,
+                        excepturi sequi quibusdam blanditiis cupiditate!
+                    </p>
+                </main>
+                <footer class="note">
+                    <span>note 2</span>
+                </footer>
+            </div>
+            <div class="card flex-item">
+                <header class="title">
+                    <h2>Third Card</h2>
+                </header>
+                <main>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum blanditiis tempora ut tenetur,
+                        veniam perferendis ex eius totam velit accusamus, perspiciatis animi. Placeat dignissimos enim,
+                        excepturi sequi quibusdam blanditiis cupiditate!
+                    </p>
+                </main>
+                <footer class="note">
+                    <span>note 3</span>
+                </footer>
+            </div>
+
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
