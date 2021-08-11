@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Responsive Web</title>
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        section {
+            padding: 1rem;
+        }
+
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            place-self: center;
+            gap: 2rem;
+        }
+
+        figcaption {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .rounded {
+            border-radius: 20px;
+        }
+
+        .shadow {
+            box-shadow: 2px 10px 62px 15px rgba(0, 0, 0, 0.38);
+            -webkit-box-shadow: 2px 10px 62px 15px rgba(0, 0, 0, 0.38);
+            -moz-box-shadow: 2px 10px 62px 15px rgba(0, 0, 0, 0.38);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto;
+        }
+        @media screen and (min-width : 768px) {
+            section {
+                padding: 2rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+
+        <div class="content-side">
+            <h1 class="title">Sahara is awesome</h1>
+            <article>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut asperiores sequi, quam impedit amet
+                    provident expedita error natus quibusdam distinctio tempora inventore culpa, excepturi ea, fugiat
+                    debitis numquam minus consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                    esse nostrum neque doloribus incidunt consequuntur necessitatibus eveniet? Nesciunt mollitia dolor
+                    esse quibusdam quam ab! Vel voluptatem fugiat laudantium enim quod!</p>
+            </article>
+            <footer>
+                <h3>Article Details</h3>
+                <p>Written in 2021</p>
+            </footer>
+        </div>
+        <div class="illustration-side">
+            <figure>
+                <picture>
+                    <source
+                        srcset="https://images.unsplash.com/photo-1628627260268-ef0da5c9c10e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&q=80"
+                        media="(max-width: 768px)">
+                    <source
+                        srcset="https://images.unsplash.com/photo-1628627260268-ef0da5c9c10e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80">
+                    <img class="responsive-image rounded shadow"
+                        src="https://images.unsplash.com/photo-1628627260268-ef0da5c9c10e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                        alt="Flowers">
+                </picture>
+                <figcaption>- Figure 1 : Deep sahara - </figcaption>
+            </figure>
+
+        </div>
+    </section>
+</body>
+
+</html>
