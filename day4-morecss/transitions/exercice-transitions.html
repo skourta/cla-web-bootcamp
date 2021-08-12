@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Transitions</title>
+</head>
+
+<style>
+
+    .container {
+        max-width: 768px;
+        height: 400px;
+        margin: auto;
+        display: grid;
+        place-items: center;
+    }
+    .btn {
+        color: rgb(100, 99, 99);
+        font-weight: 700;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        cursor: pointer;
+        background-color: rgb(233, 232, 232);
+        border: 2px rgba(100, 99, 99, 0.363) solid;
+        transform: translate(0);
+        box-shadow: 0 0 4px rgba(33, 33, 33, 0.1);
+    }
+
+    .btn:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(44, 76, 255);
+        border-color: rgb(32, 66, 255, 0.363);
+        box-shadow: 0 0 11px rgba(33, 33, 33, .7);
+    }
+
+    .btn:focus {
+        color: rgb(255, 255, 255);
+        background-color: rgb(32, 66, 255);
+        border-color: rgb(32, 66, 255, 0.363);
+        outline: rgba(76, 102, 248, 0.425) groove 4px;
+        box-shadow: 0 0 11px rgba(33, 33, 33, .7);
+    }
+
+    .transition-btn {
+        transition: all 300ms ease-in-out;
+    }
+
+    .transition-transform-y:hover {
+        transform: translateY(-0.3rem);
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <button class="btn transition-btn transition-transform-y">
+            Click me
+        </button>
+    </div>
+
+
+</body>
+
+</html>

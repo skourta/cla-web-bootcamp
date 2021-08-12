@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions Shorthand</title>
+</head>
+
+<style>
+    .mybtn {
+        color: white;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        cursor: pointer;
+        background-color: red;
+        border: 2px rgba(0, 0, 0, 0.363) solid;
+    }
+    .mybtn:hover{
+        background-color: orange;
+        color: black;
+    }
+    .transition-btn {
+      transition: background 300ms linear, color 200ms ease 300ms;
+    }
+</style>
+<body>
+    
+    <button class="mybtn transition-btn">Click Me</button>
+</body>
+</html>
