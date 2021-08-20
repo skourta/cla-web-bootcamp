@@ -1,0 +1,38 @@
+*{
+    color: blue;
+    font-family: sans-serif;
+}
+
+h1 {
+    color : red;
+}
+
+ul em {
+    color: chocolate;
+}
+
+ul > li {
+    
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+input[type="text"] {
+    border: 2px red solid; 
+}
+
+.big-content {
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    border-radius: 50px;
+}
+
+#description {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+}

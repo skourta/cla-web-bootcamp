@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgrounds</title>
+    <style>
+        *{
+            color: white;
+            font-size: large;
+            
+        }
+        div{
+            border: 1px black solid;
+        }
+        #color1 {
+            display: inline-block;
+            background-color: red;
+        }
+        #image1 {
+            display: inline-block;
+            background-image: url('./images/image1.jpg');
+            background-repeat: repeat;
+        }
+        #image2 {
+            display: inline-block;
+            background-image: url('./images/image1.jpg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;  
+        }
+        #image3 {
+            display: inline-block;
+            background-image: url('./images/image1.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;  
+        }
+        .text {
+            background-color: black;            
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="color1" style="width: 400px; height: 400px;">
+        <span class="text">color background</span>
+    </div>
+    <div id="image1" style="width: 400px; height: 400px;"> <span class="text">image background</span> </div>
+    <div id="image2" style="width: 400px; height: 400px;"> <span class="text">Contain image background</span> </div>
+    <div id="image3" style="width: 600px; height: 400px;"> <span class="text">Cover image background</span> </div>
+</body>
+</html>

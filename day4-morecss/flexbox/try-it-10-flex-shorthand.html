@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Shrink</title>
+</head>
+<style>
+    .container-row {
+
+        margin: auto;
+        background-color: bisque;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex-item {
+        background: orange;
+        border-radius: 10px;
+        border: 2px solid black;
+        width: 200px;
+        height: 200px;
+        /*These styles are used to just center the content inside the item*/
+        display: grid;
+        place-items: center;
+    }
+</style>
+
+<body>
+    <h1>Using Flex shorthand</h1>
+    <div class="container-row">
+        <div class="flex-item" style="flex: 1 1;">Item 1</div>
+        <div class="flex-item" style="flex: 2 1 25%;">Item 2</div>
+        <div class="flex-item" style="flex: 1 2 20rem;">Item 3</div>
+        <div class="flex-item" style="flex : 1;">Item 4</div>
+    </div>
+
+</body>
+
+</html>

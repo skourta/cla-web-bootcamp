@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Area</title>
+</head>
+<style>
+    .navigation {
+        grid-area: header;
+        background-color: orange;
+    }
+
+    .content {
+        grid-area: main;
+        background-color: beige;
+    }
+
+    .options {
+        grid-area: sidebar;
+        background-color: gold;
+    }
+
+    .info {
+        grid-area: footer;
+        background-color: aqua;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header header header header" 
+            "main main . sidebar" 
+            "footer footer footer footer";
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <nav class="navigation">
+            <ul style="list-style: none; display : flex; justify-content: space-around;">
+                <li>link1</li>
+                <li>link2</li>
+                <li>link3</li>
+                <li>link4</li>
+            </ul>
+        </nav>
+        <main class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio dolorem fugiat veritatis vel qui asperiores porro vitae ipsam aut beatae accusamus magnam reiciendis dignissimos numquam, pariatur modi tempore ipsum saepe.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti illum dolorem, amet ipsa at officiis modi reprehenderit praesentium? Quibusdam eaque, est eveniet non animi ullam dolore blanditiis fugit placeat repellendus.</p>
+        </main>
+        <aside class="options">
+            <ul>
+                <li>option1</li>
+                <li>option2</li>
+                <li>option3</li>
+            </ul>
+        </aside>
+        <footer class="info">
+            Some footer information
+        </footer>
+    </div>
+</body>
+
+</html>
