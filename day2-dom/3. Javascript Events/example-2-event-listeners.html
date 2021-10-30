@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <p>Click the following button and see result</p>
+      <form>
+         <input type="button" id="myBtn" value="Say Hello" />
+      </form>
+      <script type="text/javascript">
+         let btn = document.getElementById("myBtn")
+         btn.addEventListener("click", sayHello)
+         function sayHello() {
+            alert("Hello World!");
+         }
+      </script>
+   </body>
+</html>
