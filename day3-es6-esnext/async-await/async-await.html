@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await</title>
+  </head>
+  <body>
+    <script>
+      function createPromise(value, error, isError = false, timeout = 500) {
+        console.log("Promise of ", value, " created ✅");
+        const promise = new Promise((resolve, reject) => {
+          // simulating a long running background task of 3s
+          setTimeout(() => {
+            if (isError) reject(error);
+            else resolve(value);
+          }, timeout);
+        });
+        return promise;
+      }
+
+      // Async operation with promises only
+      function myAsyncOperation() {
+        const promise = createPromise("30");
+        promise
+          .then((value) => console.log(value)) // 30
+          .catch((err) => console.log(err));
+        return promise;
+      }
+
+      console.log("With Promises:");
+
+      myAsyncOperation().then((value) =>
+        console.log("Doing something with promise value: ", value)
+      );
+
+
+      // Async operation with Async/await 
+
+
+      async function main(){
+
+        try {
+            const value = await createPromise("30",null,false,4000)
+            console.log("Async/Await - Doing something with async value: ", value)
+        }catch(err)
+        {
+            console.error(err)
+        }
+
+      }
+
+      main()
+
+      // something that can execute while main is waiting
+
+      console.log("Synchronous code that must not be blocked")
+
+    </script>
+  </body>
+</html>

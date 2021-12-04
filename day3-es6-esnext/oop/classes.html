@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+  </head>
+  <body>
+    <script>
+      let id = 0
+      function generateAccountID(){
+          return ++id
+      }
+
+      class  Account {
+          id
+          userName
+          balance
+          constructor(username,startBalance=0) {
+              this.id = generateAccountID()
+              this.userName =username
+              this.balance = startBalance
+          }
+
+          deposit(amount) {
+             this.balance += Math.abs(amount) // to ensure deposit always adds a value
+          }
+          withdraw(amount) {
+            this.balance -= Math.abs(amount) // to ensure withdraw always retracts a value
+          }
+          }
+
+
+
+          const johnAccount = new Account("JohnDoe")
+          const maryAccount = new Account("MarySmith",10) // 10 is the starting balance of this account
+
+          johnAccount.deposit(30)
+
+          console.log(johnAccount.balance) // 30
+          console.log(maryAccount)
+    </script>
+  </body>
+</html>

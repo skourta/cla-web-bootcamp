@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread</title>
+  </head>
+  <body>
+    <script>
+      console.log("Spreading an object inside another");
+      const info = { name: "john", age: 30 };
+
+      const userAccount = { ...info, createdAt: new Date(), balance: 0 };
+
+      console.log(userAccount);
+
+      console.log("Order matters in spread:");
+      
+      
+      let state = { count: 0, loading: true, trials: 10 };
+      const newState = { count: 13, loading: false, trials: state.trials + 1 };
+      
+      console.log("{...state,newState}", {...state,...newState})
+      console.log("{newState,...state}", {...newState,...state})
+    </script>
+  </body>
+</html>

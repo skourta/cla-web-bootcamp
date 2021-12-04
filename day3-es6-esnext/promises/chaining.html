@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chaining Promises</title>
+  </head>
+  <body>
+    <script>
+      function createPromise(value, error, isError = false, timeout = 500) {
+        console.log("Promise of ",value," created ✅")
+        const promise = new Promise((resolve, reject) => {
+          // simulating a long running background task of 3s
+          setTimeout(() => {
+            if (isError) reject(error);
+            else resolve(value);
+          }, timeout);
+        });
+        return promise
+      }
+
+      const promise1 = createPromise("value1", "error1", false);
+
+      console.log(promise1);
+
+      // chaining promises
+      promise1
+        .then(
+          (value) => createPromise(value, "❌ error2", false),
+          (error1) => console.log("Rejected with error", error1)
+        )
+        .then(
+          (value) => createPromise(value, "❌ error3", false, 1000),
+          (error2) => console.log("Rejected with error", error2)
+        )
+        .then(
+          (value) => createPromise(value, "❌ error4", true, 4000),
+          (error3) => console.log("Rejected with error", error3)
+        )
+        .then(value => console.log(value))
+        .catch((error) => console.log("Any uncaught error", error));
+    </script>
+  </body>
+</html>

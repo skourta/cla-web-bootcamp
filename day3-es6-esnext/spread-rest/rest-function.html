@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest with functions</title>
+  </head>
+  <body>
+    <script>
+      function foo({ arg1, arg2, ...rest }) {
+        console.log(rest);
+      }
+
+      foo({ arg1: 1, arg2: 2, name: "name", arr: ["item 1"] });
+
+      function bar(a,b,c) {
+          console.log(a,b,c)
+      }
+
+      const args = [1,2]
+
+      bar(...args,3)
+      bar(3,...args)
+
+    </script>
+  </body>
+</html>

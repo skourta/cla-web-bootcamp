@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top-Level Await</title>
+  </head>
+  <body>
+    <!-- we need to include a transpiler like babel to allow top-level await because it is not supported yet by most browsers -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" data-type="module">
+
+      function createPromise(value, error, isError = false, timeout = 4000) {
+        console.log("Promise of ", value, " created ✅");
+        const promise = new Promise((resolve, reject) => {
+          // simulating a long running background task of 3s
+          setTimeout(() => {
+            if (isError) reject(error);
+            else resolve(value);
+          }, timeout);
+        });
+        return promise;
+      }
+
+      // this is a top level await - we dont need to have a wrapping async function
+      console.log("Getting an async value...")
+      const value = await createPromise(400)
+      console.log("Async value is : ", value)
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nullish Coalescing</title>
+  </head>
+  <body>
+    <script>
+      // Prior to Nullish Coalescing
+      let value;
+
+      let v = value === undefined ? "default" : value;
+      console.log(v);
+      // With Nullish Coalescing
+
+      v = value ?? "default";
+
+      console.log(v);
+
+      // Combined with Optional Chaining
+      let user = {
+        name: "john",
+        age: 30,
+        locatin: {
+          // locatin instead of location
+          latitude: 30.3,
+          longitude: 31.3,
+        },
+      };
+      const latitude = user?.location?.latitude ?? null;
+      const v3 = latitude && latitude / 2;
+      console.log(v3);
+    </script>
+  </body>
+</html>

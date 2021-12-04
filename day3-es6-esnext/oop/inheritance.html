@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritance</title>
+  </head>
+  <body>
+    <script>
+      let id = 0;
+      function generateAccountID() {
+        return ++id;
+      }
+
+      class Account {
+        id;
+        userName;
+        balance;
+        constructor(username, startBalance = 0) {
+          this.id = generateAccountID();
+          this.userName = username;
+          this.balance = startBalance;
+        }
+
+        deposit(amount) {
+          this.balance += Math.abs(amount); // to ensure deposit always adds a value
+        }
+        withdraw(amount) {
+          this.balance -= Math.abs(amount); // to ensure withdraw always retracts a value
+        }
+      }
+
+      const BONUS_PER = 0.01;
+
+      class PremiumAccount extends Account {
+        monthlyBonus;
+
+        constructor(username, startBalance = 0) {
+          super(username, startBalance);
+          this.addMonthlyBonus();
+        }
+
+        addMonthlyBonus() {
+          this.monthlyBonus = this.balance * BONUS_PER;
+        }
+        withdrawBonus() {
+          var bonus = this.monthlyBonus;
+          this.monthlyBonus = 0;
+          return bonus;
+        }
+      }
+      const johnAccount = new Account("JohnDoe", 10);
+      console.log(johnAccount);
+      
+      console.log("Prototype of John's Account:",johnAccount.__proto__)
+
+      const maryAccount = new PremiumAccount("MarySmith", 10); 
+      console.log(maryAccount);
+      
+      console.log("Prototype of Mary's Premium Account:",maryAccount.__proto__)
+      // many bonuses
+      maryAccount.addMonthlyBonus();
+      console.log(maryAccount);
+      maryAccount.deposit(300)
+      maryAccount.deposit(40)
+      maryAccount.addMonthlyBonus();
+      console.log(maryAccount);
+      maryAccount.withdraw(20)
+      maryAccount.addMonthlyBonus();
+      console.log(maryAccount);
+      maryAccount.deposit(400)
+      maryAccount.withdraw(50)
+      maryAccount.addMonthlyBonus();
+      console.log(maryAccount);
+      maryAccount.withdraw(100)
+      maryAccount.addMonthlyBonus();
+      console.log(maryAccount);
+      console.log(maryAccount.withdrawBonus())
+      
+    </script>
+  </body>
+</html>

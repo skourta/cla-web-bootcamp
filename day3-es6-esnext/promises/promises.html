@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <script>
+      const isErrorPromise = false; // we use this to test both cases
+
+      const promise = new Promise((resolve, reject) => {
+        // simulating a long running background task of 3s
+        setTimeout(() => {
+          if (isErrorPromise)
+            reject("too bad this promise is rejected because of an error ");
+          else resolve("Since no error, this promise is resolved correctly");
+        }, 3000);
+      });
+
+      console.log(promise);
+
+      promise
+        .then((value) => console.log("Resolved value:", value))
+        .catch((error) => console.log("Rejected with error", error));
+      
+    </script>
+  </body>
+</html>

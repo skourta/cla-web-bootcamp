@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Methods</title>
+  </head>
+  <body>
+    <script>
+      function createPromise(value, error, isError=false, timeout = 500) {
+        console.log("Promise of ", value, " created ✅");
+        const promise = new Promise((resolve, reject) => {
+          // simulating a long running background task of 3s
+          setTimeout(() => {
+            if (isError) reject(error);
+            else resolve(value);
+          }, timeout);
+        });
+        return promise;
+      }
+
+      const p1 = createPromise("value1", "error1", false, 400);
+      const p2 = createPromise("value2", "error2", false, 500);
+      const p3 = createPromise("value3", "error3", false, 1000); // change to true to see change with settled
+
+      Promise.any([p1, p2, p3]).then((value) => console.log("Any:", value));
+
+      Promise.allSettled([p1, p2, p3]).then((status) =>
+        console.log("Settled status", status)
+      );
+      Promise.all([p1, p2, p3])
+        .then(([value1, value2, value3]) =>
+          console.log("All Results are :", value1, value2, value3)
+        )
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>

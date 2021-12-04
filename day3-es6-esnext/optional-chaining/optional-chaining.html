@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optional Chaining</title>
+  </head>
+  <body>
+    <script>
+      let user = {
+        name: "john",
+        age: 30,
+        locatin: { // locatin instead of location
+          latitude: 30.3, 
+          longitude: 31.3,
+        },
+      };
+      /// Prior to optinal Chaining
+      let v1;
+      if (
+        user !== undefined &&
+        user.location !== undefined &&
+        user.location.latitude !== undefined
+      ) {
+        const v1 = user.location.latitude / 2;
+      } else {
+        v1 = null;
+      }
+      console.log("first v: ", v1);
+      // Or Try and Catch
+      let v2;
+      try {
+        v2 = user.location.latitude / 2;
+      } catch (err) {
+        // ignore the error and set v
+        v2 = null;
+      }
+      console.log("second v: ", v2);
+
+      // With optional chaining
+      console.log("With Optional Chaining");
+
+      const v3 = user?.location?.latitude / 2 ;
+
+      console.log("optinonal chaining v: ", v3);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Const</title>
+  </head>
+  <body>
+    <script>
+      console.log("Using 'const':");
+
+      function usingConst() {
+        const a = 10;
+        console.log("a=", a);
+        a = 300;
+        console.log("a=", a);
+      }
+
+      try {
+        usingConst();
+      } catch (err) {
+        console.error(err);
+      }
+
+      const obj = {};
+      
+      console.log("Const Object Empty",JSON.stringify(obj) );
+
+      obj.name = "John";
+      obj.date = new Date();
+
+      console.log("Const Object Mutated", JSON.stringify(obj));
+
+      const arr = [];
+
+      console.log("Array Empty", JSON.stringify(arr));
+
+      arr.push("John");
+
+      console.log("Array Mutated", JSON.stringify(arr));
+
+      console.log("Freezing");
+
+      Object.freeze(obj);
+
+      obj.id = "13431";
+
+      console.log(JSON.stringify(obj));
+    </script>
+  </body>
+</html>

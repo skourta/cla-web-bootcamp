@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var vs Let</title>
+</head>
+<body>
+    
+    <script>
+        console.log("Using 'var':")
+        function scopeVar() {
+            var a = 10
+            console.log("1 - out of scope a=",a)
+            {
+                var a = 123
+                console.log("2 - in scope a=",a)
+            }
+            console.log("3 - out of scope a=",a)
+        }
+       
+        scopeVar()
+        
+        console.log("Var Hoisting:")
+
+        function varHoisting() {
+            b = 3210
+            console.log("The variable b is hoisted to the top b=",b)
+            var b ;
+        }
+
+        varHoisting()
+        
+        console.log("Using 'let':")
+        function scopeLet() {
+            let a = 10
+            console.log("1 - out of scope a=",a)
+            {
+                let a = 123
+                console.log("2 - in scope a=",a)
+            }
+            console.log("3 - out of scope a=",a)
+        }
+       
+        scopeLet()
+
+        console.log("Let Hoisting:")
+
+        function letHoisting() {
+            b = 3210
+            console.log("The variable b is not hoisted to the top b=",b)
+            let b ;
+        }
+        letHoisting()
+
+
+    </script>
+</body>
+</html>

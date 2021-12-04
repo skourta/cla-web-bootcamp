@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This</title>
+  </head>
+  <body>
+    <script>
+      console.log("In global scope, 'this' is window:", this);
+
+      function foo() {
+        console.log("Normal function");
+        let a = 30;
+        console.log(this);
+      }
+
+      foo();
+
+      console.log("Setting this inside a function then instantiating it(new)");
+      function bar(a, b) {
+        this.a = a;
+        this.b = b;
+
+        console.log("'this' is :", this);
+      }
+      const obj = new bar(1, 2);
+
+      console.log("Without instantiating 'bar' ");
+      bar(1, 2);
+
+      console.log("'this' inside objects: ");
+
+      const obj2 = {
+        x: 3,
+        c: 5,
+        text: "text",
+        getText: function () {
+          console.log("'this' here is the object: ", this);
+          return this.text;
+        },
+        getX: () => {
+          console.log(
+            "'this' here is the surrounding code ie: the global scope: ",
+            this
+          );
+          console.log("X:", this.x);
+          return this.x;
+        },
+      };
+
+      obj2.getText();
+      obj2.getX();
+
+      this.x = "x in window"
+
+      obj2.getX()
+
+    </script>
+  </body>
+</html>
